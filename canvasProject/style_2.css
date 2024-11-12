@@ -1,0 +1,142 @@
+/* CSS reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,
+html {
+    height: 100%;
+    ;
+    width: 100%;
+    background-color: rgb(9, 10, 12);
+}
+
+#root {
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* background-color: white; */
+}
+
+/* navbar */
+
+.navbar nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar nav img {
+    width: 15%;
+    filter: invert(1);
+    margin: 0 13px;
+    background-blend-mode: soft-light;
+}
+
+.navbar nav ul {
+    display: flex;
+    justify-content: space-b;
+    align-items: center;
+    list-style: none;
+}
+
+.navbar nav ul li {
+    margin: 0 13px;
+    font-size: 15px;
+    font-weight: 400;
+}
+
+.right {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 14px;
+}
+
+.right h2 {
+    font-size: 15px;
+    margin: 0 20px;
+}
+
+.right button {
+    font-size: 15px;
+    border-radius: 13px;
+    color: black;
+    padding: 12px 12px;
+}
+
+/* main-section */
+.main-section-1 {
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+    /* border: 2px solid white; */
+    margin: auto;
+    height: 80vh;
+    width: 100vw;
+}
+
+.text {
+    font-size: 60px;
+    /* border: 2px solid white; */
+    width: 50%;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.text span {
+    font-size: 30px;
+    color: white;
+    background-color: rgb(204, 0, 0);
+    border-radius: 30px;
+    margin: 14px 12px;
+    padding: 12px 12px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.img-top-left {
+    text-align: right;
+    /* border: 2px solid white; */
+    width: 25%;
+
+}
+
+.img-top-left img {
+    width: 75%;
+
+}
+
+.img-bottom-right {
+    text-align: left;
+    /* border: 2px solid white; */
+    width: 25%;
+    bottom: 10px;
+
+}
+
+.img-bottom-right img {
+    width: 75%;
+    /* height: 75%; */
+
+}
+
+.scroll-btn {
+    width: 8%;
+    margin: auto;
+}
+
+.scroll-down {
+    cursor: pointer;
+    color: white;
+    background-color: black;
+    border: none;
+    outline: none;
+    /* font-size: 17px; */
+    font-weight: bold;
+    padding: 0px 12px;
+}

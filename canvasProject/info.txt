@@ -1,0 +1,121 @@
+GSAP: Green Sock Animation Platform
+
+GSAP animates any property of any object(DOM, SVG, WebGL, JS object)
+
+gsap.to() function takes two arguments.
+[
+    gsap.to(targetElement, { changes to be made })
+]
+
+e.g
+[
+    gsap.to('#ball', {
+    y: 200,  // to drop the ball i.e transform: translateY(200px)
+    duration: 1.5, // duration of the animation
+    repeat: -1, // to repeat infinite times
+    ease: "bounce.out" // to give the bounce effect,
+});
+
+]
+
+Gasp ease
+e.g: gsap.to(graph, { duration: 2.5, ease: "power2.out", y: -500 });
+
+e.g ease = "effect.timing"
+    ease: "power2.out"
+
+    none/power1/power2/power3/power4/back/bounce/elastic/rough/steps/...  <.> out/in/inOut
+
+    // some are function while some are objects
+
+
+Eases
+// see greensock.com/ease-visualizer
+ease: "none" // no ease (same as "linear")
+
+// basic core eases
+"power1", "power2", "power3", "power4",
+"circ", "expo", "sine"
+// each has .in, .out, and .inOut extensions
+// i.e. "power1.inOut"
+
+// expressive core eases
+"elastic", "back", "bounce", "steps(n)"
+
+// in EasePack plugin (not core)
+"rough", "slow", "expoScale(1, 2)"
+
+// members-only expressive plugins
+CustomEase, CustomWiggle, CustomBounce
+
+ScrollTrigger
+scrollTrigger: {
+  trigger: ".selector", // selector or element
+  start: "top center",  // [trigger] [scroller] positions
+  end: "20px 80%", // [trigger] [scroller] positions
+  // or relative amount: "+=500"
+  scrub: true, // or time (in seconds) to catch up
+  pin: true, // or selector or element to pin
+  markers: true, // only during development!
+  toggleActions: "play pause resume reset",
+  // other actions: complete reverse none
+  toggleClass: "active",
+  fastScrollEnd: true, // or velocity number
+  containerAnimation: tween, // linear animation
+  id: "my-id",
+  anticipatePin: 1, // may help avoid jump
+  snap: {
+    snapTo: 1 / 10, // progress increment
+    // or "labels" or function or Array
+    duration: 0.5,
+    directional: true,
+    ease: "power3",
+    onComplete: callback,
+    // other callbacks: onStart, onInterrupt
+  },
+  pinReparent: true, // moves to documentElement during pin
+  pinSpacing: false,
+  pinType: "transform" // or "fixed"
+  pinnedContainer: ".selector",
+  preventOverlaps: true, // or arbitrary string
+  once: true,
+  endTrigger: ".selector", // selector or element
+  horizontal: true, // switches mode
+  invalidateOnRefresh: true, // clears start values on refresh
+  refreshPriority: 1, // influence refresh order
+  onEnter: callback
+  // other callbacks:
+  // onLeave, onEnterBack, onLeaveBack, onUpdate,
+  // onToggle, onRefresh, onRefreshInit, onScrubComplete
+}
+
+GSAP & scroll Trigger in React
+
+import { useRef, useEffect } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
+
+export default function Home() {
+  const text = useRef();
+  const container = useRef();
+
+  useEffect(() => {
+    ScrollTrigger.create({
+      trigger: container.current,
+      pin: text.current,
+      markers: true,
+      start: '-=100',
+      end: '+=500'
+    });
+  }, []);
+
+  return (
+    <section className="h-[3000px]">
+      <div className="bg-teal-200 h-20 mt-[40em]" ref={container}>
+        <p ref={text} className="ml-20">Cibai</p>
+      </div>
+    </section>
+  );
+}

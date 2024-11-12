@@ -1,0 +1,89 @@
+/* Get the fonts as a variable */
+@font-face{
+    font-family: head;
+    src: url('./fonts/Heading-Now-Variable.ttf');
+}
+
+/* CSS reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+#main {
+    /*do not provide height to the main section when applying locomotives*/
+    position: relative;
+    overflow: hidden;
+    background-color: black;
+}
+
+/* loading page */
+.loading-page{
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background-color:rgb(48, 47, 47);
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loader{
+    font-size: 60px;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.navbar{
+    /* height: 10%; */
+    /* width: 90%; */
+    margin: 20px auto;
+    color: white;
+}
+.navbar nav ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+.navbar nav ul li{
+    font-size: 18px;
+    margin: 14px 12px;
+}
+
+/* main sections */
+#page1{
+    font-family: head;
+    height: 100vh;
+    width: 100vw;
+    text-transform: uppercase;
+    color:white;
+    /* border: 1px solid white; */
+}
+#page1 h1{
+    font-stretch: 250%;
+    font-size: 60vh;
+    white-space: nowrap;
+    font-weight: 999;
+}
+#page2{
+    height: 100vh;
+    width: 100vw;
+    background-color: blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box{
+    height: 100px;
+    width: 100px;
+    background-color: orange;
+}
