@@ -1,14 +1,13 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
-
+import PropTypes from 'prop-types';
 import 'react-vertical-timeline-component/style.min.css';
 import { styles } from '../styles';
 import { experiences } from '../constants/index';
-import { SectionWrapper } from "../higherOrderComponent/index";
 import { textVariant } from '../utils/motion';
 
-const ExperiencedCard = ({ experience,index }) => {
+
+const WorkExperienceCard = ({ experience, index }) => {
   return (
     <>
       <VerticalTimelineElement
@@ -29,9 +28,9 @@ const ExperiencedCard = ({ experience,index }) => {
           </div>
         }
       >
-        <div className={`flex justify-center ${index%2==0 ? "items-end":"items-start"} flex-col w-full h-full`}>
+        <div className={`flex justify-center ${index % 2 == 0 ? "items-end" : "items-start"} flex-col w-full h-full`}>
           <h3 className='text-white text-[24px] font-bold'>{experience.title}</h3>
-          <p className='text-secondary font-semibold text-[16px]' style={{ margin: 0}}>
+          <p className='text-secondary font-semibold text-[16px]' style={{ margin: 0 }}>
             {experience.company_name}</p>
         </div>
         <ul className='mt-5 list-disc ml-5 space-y-2'>
@@ -39,7 +38,7 @@ const ExperiencedCard = ({ experience,index }) => {
             experience.points.map((point, index) => {
               return (<li
                 key={`experience-point${index}`}
-                className='text-white-100 text-[14px] pl-1 tracking-wider'
+                className='text-white-100  text-[14px] pl-1 tracking-wider'
               >
                 {point}
               </li>)
@@ -50,7 +49,21 @@ const ExperiencedCard = ({ experience,index }) => {
     </>
   );
 }
-const Experience = () => {
+
+// Define PropTypes for validation
+WorkExperienceCard.propTypes = {
+  experience: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    company_name: PropTypes.string.isRequired,
+    iconBg: PropTypes.string.isRequired,
+    date: PropTypes.string.isRequired,
+    points: PropTypes.array.isRequired,
+    icon: PropTypes.string.isRequired,
+  }).isRequired,
+  index: PropTypes.number.isRequired,
+};
+
+const WorkExperience = () => {
   return (
     <>
       <motion.div
@@ -65,7 +78,7 @@ const Experience = () => {
           {
             experiences.map((exp, index) => {
               return (
-                <ExperiencedCard key={index} index={index} experience={exp} />
+                <WorkExperienceCard key={index} index={index} experience={exp} />
               );
             })
           }
@@ -75,4 +88,4 @@ const Experience = () => {
   )
 }
 
-export default SectionWrapper(Experience, 'work');
+export default WorkExperience;

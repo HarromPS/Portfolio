@@ -1,6 +1,4 @@
-import React from 'react'
 import { BallCanvas } from "../components/index";
-import { SectionWrapper } from '../higherOrderComponent/index';
 import { technologies } from "../constants/index";
 
 const Tech = () => {
@@ -18,4 +16,4 @@ const Tech = () => {
     </>
   )
 }
-export default SectionWrapper(Tech, "");
+export default Tech;

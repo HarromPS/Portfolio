@@ -1,38 +1,51 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { styles } from '../styles';
-import { SectionWrapper } from '../higherOrderComponent/index';
+// import { SectionWrapper } from '../higherOrderComponent/index';
 import { fadeIn, textVariant } from '../utils/motion';
 import { testimonials } from '../constants';
+import PropTypes from 'prop-types';
 
-const TestimonialsCard = (props) => {
+const TestimonialsCard = ({item,index}) => {
   return (
     <>
       <motion.div
-        variants={fadeIn("", 'spring', 0.5 * props.index * 0.75)}
+        variants={fadeIn("", 'spring', 0.5 * index * 0.75)}
         className='bg-black-200 p-10 rounded-3xl xs:w-[320px] w-full'
       >
-        <p className="text-white font-black text-[48px]">"</p>
+        <p className="text-white font-black text-[48px]">&quot;</p>
 
         <div className="mt-1">
-          <p className='text-white tracking-wider text-[18px]'>{props.item.testimonial}</p>
+          <p className='text-white tracking-wider text-[18px]'>{item.testimonial}</p>
           <div className="mt-7 flex justify-between items-center gap-1">
             <div className="flex-1 flex flex-col">
               <p className='text-white font-medium text-[16px]'>
-                <span className='blur-text-radient'>@</span>{props.item.name}
+                <span className='blur-text-radient'>@</span>{item.name}
               </p>
               <p className='mt-1 text-secondary text-[12px]'>
-                {props.item.designation} of {props.item.name}
+                {item.designation} of {item.name}
               </p>
             </div>
 
-            <img src={props.item.image} alt={props.item.name} className={`w-10 h-10 rounded-full object-cover`}/>
+            <img src={item.image} alt={item.name} className={`w-10 h-10 rounded-full object-cover`}/>
           </div>
         </div>
       </motion.div>
     </>
   )
 }
+
+TestimonialsCard.propTypes = {
+  item: PropTypes.shape({
+    testimonial: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    designation: PropTypes.string.isRequired,
+    company: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+  }).isRequired,
+  index: PropTypes.number.isRequired,
+};
+
+
 const Feedbacks = () => {
   return (
     <>
@@ -60,4 +73,4 @@ const Feedbacks = () => {
   )
 }
 
-export default SectionWrapper(Feedbacks,"");
+export default Feedbacks;

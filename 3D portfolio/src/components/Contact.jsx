@@ -1,11 +1,12 @@
-import React, { useState, useRef } from 'react';
+import { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
+import { ToastContainer, toast } from 'react-toastify';
 
 // Account needed on EmailJS.com
 import emailjs from '@emailjs/browser';
 import { styles } from '../styles';
-import { EarthCanvas } from './canvas';
-import { SectionWrapper } from '../higherOrderComponent/index';
+// import { EarthCanvas } from './canvas';
+// import { SectionWrapper } from '../higherOrderComponent/index';
 import { slideIn } from '../utils/motion';
 
 const Contact = () => {
@@ -26,22 +27,31 @@ const Contact = () => {
   const handleSubmit = (element) => {
     element.preventDefault();
     setLoading(true);
-    // emailjs.send(process.env.REACT_SERVICE_ID)
+
     emailjs.send(
-      'service_pl58mzc',
-      'template_4710t0e',
+      import.meta.env.VITE_Service_Id,
+      import.meta.env.VITE_TEMPLATE_ID,
       {
         from_name: form.name,
-        to_name: "Hariom",
+        to_name: import.meta.env.VITE_My_username,
         from_email: form.email,
-        to_email: '2021bit046@sggs.ac.in',
+        to_email: import.meta.env.VITE_My_Email,
         message: form.message
       },
-      'J4nnOAij3rmdAO-Zb'
+      import.meta.env.VITE_PUBLIC_KEY
     ).then(()=>{
       setLoading(false);
-      alert("Thank You, I will get back to you as soon as possible.")
-    });
+      toast('😀 Thank You! I will connect as soon as I can.', {
+        position: "bottom-left",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+    }).catch((error) => console.log(error));
 
     setForm({
       name:"",
@@ -57,6 +67,18 @@ const Contact = () => {
   return (
     <>
       {/* div holds form inside  */}
+      <ToastContainer
+        position="bottom-left"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick={false}
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
 
       {/* extra large margin top 12 */}
       <div className='xl:mt-12 xl:flex-row flex-col-reverse flex gap-10 overflow-hidden'>
@@ -135,4 +157,4 @@ const Contact = () => {
   )
 }
 
-export default SectionWrapper(Contact, "contact");
+export default Contact;

@@ -1,0 +1,188 @@
+{
+    "tree": {
+        "cl_3": {
+            "chatbot": {
+                "chatbot": {
+                    "__init__.py": null,
+                    "__pycache__": {
+                        "__init__.cpython-312.pyc": null,
+                        "settings.cpython-312.pyc": null,
+                        "urls.cpython-312.pyc": null,
+                        "wsgi.cpython-312.pyc": null
+                    },
+                    "asgi.py": null,
+                    "settings.py": null,
+                    "urls.py": null,
+                    "wsgi.py": null
+                },
+                "db.sqlite3": null,
+                "manage.py": null,
+                "mybot": {
+                    "__init__.py": null,
+                    "__pycache__": {
+                        "__init__.cpython-312.pyc": null,
+                        "admin.cpython-312.pyc": null,
+                        "apps.cpython-312.pyc": null,
+                        "models.cpython-312.pyc": null,
+                        "urls.cpython-312.pyc": null,
+                        "views.cpython-312.pyc": null
+                    },
+                    "admin.py": null,
+                    "apps.py": null,
+                    "migrations": {
+                        "__init__.py": null,
+                        "__pycache__": {
+                            "__init__.cpython-312.pyc": null
+                        }
+                    },
+                    "models.py": null,
+                    "tests.py": null,
+                    "urls.py": null,
+                    "views.py": null
+                },
+                "static": {
+                    "cat.jpg": null,
+                    "chatbot.webp": null,
+                    "script.js": null
+                },
+                "templates": {
+                    "home.html": null
+                }
+            },
+            "google": {
+                ".env": null,
+                ".gitignore": null,
+                "build_files.sh": null,
+                "db.sqlite3": null,
+                "google": {
+                    "__init__.py": null,
+                    "__pycache__": {
+                        "__init__.cpython-310.pyc": null,
+                        "__init__.cpython-312.pyc": null,
+                        "settings.cpython-310.pyc": null,
+                        "settings.cpython-312.pyc": null,
+                        "urls.cpython-310.pyc": null,
+                        "urls.cpython-312.pyc": null,
+                        "wsgi.cpython-310.pyc": null,
+                        "wsgi.cpython-312.pyc": null
+                    },
+                    "asgi.py": null,
+                    "settings.py": null,
+                    "urls.py": null,
+                    "wsgi.py": null
+                },
+                "home": {
+                    "__init__.py": null,
+                    "__pycache__": {
+                        "__init__.cpython-310.pyc": null,
+                        "__init__.cpython-312.pyc": null,
+                        "admin.cpython-310.pyc": null,
+                        "admin.cpython-312.pyc": null,
+                        "apps.cpython-310.pyc": null,
+                        "apps.cpython-312.pyc": null,
+                        "models.cpython-310.pyc": null,
+                        "models.cpython-312.pyc": null,
+                        "urls.cpython-310.pyc": null,
+                        "urls.cpython-312.pyc": null,
+                        "views.cpython-310.pyc": null,
+                        "views.cpython-312.pyc": null
+                    },
+                    "admin.py": null,
+                    "apps.py": null,
+                    "migrations": {
+                        "__init__.py": null,
+                        "__pycache__": {
+                            "__init__.cpython-310.pyc": null,
+                            "__init__.cpython-312.pyc": null
+                        }
+                    },
+                    "models.py": null,
+                    "tests.py": null,
+                    "urls.py": null,
+                    "views.py": null
+                },
+                "mainApp": {
+                    "__init__.py": null,
+                    "__pycache__": {
+                        "__init__.cpython-310.pyc": null,
+                        "__init__.cpython-312.pyc": null,
+                        "admin.cpython-310.pyc": null,
+                        "admin.cpython-312.pyc": null,
+                        "apps.cpython-310.pyc": null,
+                        "apps.cpython-312.pyc": null,
+                        "models.cpython-310.pyc": null,
+                        "models.cpython-312.pyc": null,
+                        "views.cpython-310.pyc": null,
+                        "views.cpython-312.pyc": null
+                    },
+                    "admin.py": null,
+                    "apps.py": null,
+                    "migrations": {
+                        "__init__.py": null,
+                        "__pycache__": {
+                            "__init__.cpython-310.pyc": null,
+                            "__init__.cpython-312.pyc": null
+                        }
+                    },
+                    "models.py": null,
+                    "tests.py": null,
+                    "views.py": null
+                },
+                "manage.py": null,
+                "requirements.txt": null,
+                "static": {
+                    "css": {
+                        "index.css": null
+                    },
+                    "favicon.ico": null,
+                    "media": {
+                        "imgs": {
+                            "home.jpg": null,
+                            "img1.jpg": null,
+                            "img2.jpg": null,
+                            "img3.jpg": null,
+                            "itlogo.jpg": null
+                        }
+                    }
+                },
+                "templates": {
+                    "base.html": null,
+                    "base_main.html": null,
+                    "dashboard.html": null,
+                    "home.html": null,
+                    "index.html": null,
+                    "joinroom.html": null,
+                    "login.html": null,
+                    "login_main.html": null,
+                    "signup.html": null,
+                    "videocall.html": null
+                },
+                "vercel.json": null
+            },
+            "google.zip": null,
+            "info.txt": null
+        },
+        "cn": {
+            "chat_app": {
+                "client_script.py": null,
+                "server_script.py": null
+            },
+            "http_post": {
+                "script.py": null
+            },
+            "http_server": {
+                "script.py": null
+            },
+            "icmp_ping": {
+                "script.py": null
+            },
+            "packet_sniffer": {
+                "script.py": null
+            }
+        },
+        "sample.txt": null,
+        "sample2.txt": null,
+        "sample22.txt": null,
+        "sample223.txt": null
+    }
+}

@@ -1,23 +1,36 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { styles } from '../styles';
-import { SectionWrapper } from '../higherOrderComponent/index';
+// import { SectionWrapper } from '../higherOrderComponent/index';
 import { fadeIn, textVariant } from '../utils/motion';
 import { socialMedia } from "../constants/index";
+import PropTypes from 'prop-types';
 
-const SocialIcons = (props) => {
-    const { name, icon, link } = props.item;
+const SocialIcons = ({ item, index }) => {
     return (
         <>
             <motion.div
-                variants={fadeIn("up", 'spring', 0.5 * props.index * 0.75)}
-                className='bg-black-200 p-10 rounded-3xl xs:w-[150px] w-full'
+                variants={fadeIn("up", 'spring', 0.5 * index * 0.75)}
+                className='bg-black-200 p-2 '
             >
-                <a href={`mailto:${socialMedia[3].link}`} rel="noopener noreferrer" target='_blank'><img src={socialMedia[3].icon} alt={socialMedia[3].name} className={`w-15 h-15 rounded-full object-cover cursor-pointer`} /></a>
+
+                <a href={(item.type === 'mail' ? `mailto:${item.link}` : (item.type === 'number' ? `tel:${item.link}` : item.link))} rel="noopener noreferrer" target='_blank' className='object-cover cursor-pointer text-center'>
+                    <item.icon className='h-[30px] w-[30px]'/>
+                </a>
             </motion.div>
         </>
     )
 }
+
+SocialIcons.propTypes = {
+    item: PropTypes.shape({
+        type: PropTypes.string.isRequired,
+        icon: PropTypes.string.isRequired,
+        link: PropTypes.number.isRequired,
+        name: PropTypes.string.isRequired,
+    }).isRequired,
+    index: PropTypes.number.isRequired,
+};
+
 const SocialMedia = () => {
     return (
         <>
@@ -32,47 +45,13 @@ const SocialMedia = () => {
                 </div>
 
                 <div className={`${styles.padding} cursor-pointer min-h-[80px] min-w-[80px] pb-14 flex flex-wrap gap-7 -mt-40`}>
-                    {/* {
+                    {
                         socialMedia.map((items, index) => {
                             return (
-                                <SocialIcons key={index} item={items} />
+                                <SocialIcons key={index} item={items} index={index} />
                             )
                         })
-                    } */}
-
-                    <motion.div
-                        variants={fadeIn("up", 'spring', 0.5 * 0 * 0.75)}
-                        className='bg-black-200 p-10 rounded-3xl xs:w-[150px] w-full'
-                    >
-                        <a href={`tel:${socialMedia[0].link}`} rel="noopener noreferrer" target='_blank'><img src={socialMedia[0].icon} alt={socialMedia[0].name} className={`w-15 h-15 rounded-full object-cover cursor-pointer`} /></a>
-                    </motion.div>
-
-                    <motion.div
-                        variants={fadeIn("up", 'spring', 0.5 * 1* 0.75)}
-                        className='bg-black-200 p-10 rounded-3xl xs:w-[150px] w-full'
-                    >
-                        <a href={socialMedia[1].link} rel="noopener noreferrer" target='_blank'><img src={socialMedia[1].icon} alt={socialMedia[1].name} className={`w-15 h-15 rounded-full object-cover cursor-pointer`} /></a>
-                    </motion.div>
-
-                    <motion.div
-                        variants={fadeIn("up", 'spring', 0.5 * 2 * 0.75)}
-                        className='bg-black-200 p-10 rounded-3xl xs:w-[150px] w-full'
-                    >
-                        <a href={socialMedia[2].link} rel="noopener noreferrer" target='_blank'><img src={socialMedia[2].icon} alt={socialMedia[2].name} className={`w-15 h-15 rounded-full object-cover cursor-pointer`} /></a>
-                    </motion.div>
-
-                    <motion.div
-                        variants={fadeIn("up", 'spring', 0.5 * 3 * 0.75)}
-                        className='bg-black-200 p-10 rounded-3xl xs:w-[150px] w-full'
-                    >
-                        <a href={socialMedia[3].link} rel="noopener noreferrer" target='_blank'><img src={socialMedia[3].icon} alt={socialMedia[3].name} className={`w-15 h-15 rounded-full object-cover cursor-pointer`} /></a>
-                    </motion.div>
-                    <motion.div
-                        variants={fadeIn("up", 'spring', 0.5 * 4 * 0.75)}
-                        className='bg-black-200 p-10 rounded-3xl xs:w-[150px] w-full'
-                    >
-                        <a href={socialMedia[4].link} rel="noopener noreferrer" target='_blank'><img src={socialMedia[4].icon} alt={socialMedia[3].name} className={`w-15 h-15 rounded-full object-cover cursor-pointer`} /></a>
-                    </motion.div>
+                    }
                 </div>
             </div>
         </>
@@ -80,4 +59,4 @@ const SocialMedia = () => {
 }
 
 
-export default SectionWrapper(SocialMedia, "");
+export default SocialMedia;

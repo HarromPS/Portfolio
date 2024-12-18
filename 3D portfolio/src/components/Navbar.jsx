@@ -1,5 +1,5 @@
 // Imports for the Navbar
-import React, {useState } from 'react';
+import {useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import { styles } from '../styles';
@@ -14,7 +14,7 @@ const Navbar = () => {
     <>
       {/* Template contains */}
 
-      <nav className={`${styles.paddingX} w-full flex items-center py-5 fixed top0 z-20 bg-primary`}>
+      <nav className={`${styles.paddingX} w-full flex items-center py-5 fixed top-0 z-20 bg-transparent backdrop-blur-sm shadow-sm transition-all duration-300`}>
         <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
           <Link to="/" className='flex items-center gap-2' onClick={(event) => {
             event.preventDefault();
@@ -22,9 +22,7 @@ const Navbar = () => {
             window.scrollTo(0, 0);
           }}>
             <img src={logo} alt="logo" className="w-9 h-9 object-contain" />
-            <p className="text-white text-[18px] font-bold cursor-pointer flex">
-              Hariom &nbsp; <span className='sm:block hidden'>| @Developer</span>
-            </p>
+            <p className="text-white text-[18px] font-bold cursor-pointer flex">Hariom</p>
           </Link>
 
           <ul className="list-none hidden sm:flex flex-row gap-10">
@@ -33,8 +31,7 @@ const Navbar = () => {
                 <li
                   key={items.id}
                   className={`${active === items.title ? "text-white" : "text-secondary"
-                    } hover:text-white text-[18px] font-medium cursor-pointer`}
-                  onClick={() => setActive(items.title)}
+                    } hover:text-white text-[18px] font-medium cursor-pointer hover:underline underline-offset-4 decoration-2 decoration-white hover:decoration-white hover:underline-offset-8 transition duration-300`}
                 >
                   <a href={`${items.id}`} >{items.title}</a>
                 </li>
@@ -51,6 +48,7 @@ const Navbar = () => {
               <ul className="list-none flex-col gap-4 flex justify-end items-start">
                 {
                   navLinks.map((items) => (
+                    
                     <li
                       key={items.id}
                       className={`${active === items.title ? "text-white" : "text-secondary"
@@ -60,7 +58,7 @@ const Navbar = () => {
                         setActive(items.title)
                       }}
                     >
-                      <a href={`#${items.id}`} >{items.title}</a>
+                      <a href={`${items.id}`} >{items.title}</a>
                     </li>
                   ))
                 }

@@ -1,8 +1,9 @@
-import React, { useEffect } from 'react'
 // import { motion } from "framer-motion";
 import { styles } from "../styles";
 import { portfolio } from "../constants/index";
 // import { ComputersCanvas } from "./canvas";
+import { LuBrainCircuit } from "react-icons/lu";
+import { TbBrandCpp } from "react-icons/tb";
 
 // typewriter effect
 import Typewriter from 'typewriter-effect';
@@ -10,8 +11,8 @@ import Typewriter from 'typewriter-effect';
 const Hero = () => {
   return (
     <>
-      <section className=' relative w-full h-screen mx-auto '>
-        <div className={`${styles.paddingX} absolute inset-0 top-[120px] max-w-7xl mx-auto items-start gap-5 flex flex-col sm:flex-row`}>
+      <section className='relative w-full h-screen mx-auto '>
+        <div className={`${styles.paddingX} absolute inset-0 h-full top-[120px] max-w-7xl mx-auto items-start gap-5 flex flex-col sm:flex-row `}>
           <div className="flex justify-center items-center mt-5">
             <div className="flex flex-col justify-center items-center mt-5">
               <div className="w-5 h-5 rounded-full bg-[#915eff]" />
@@ -21,7 +22,7 @@ const Hero = () => {
             {/* name */}
             <div>
               <h1 className={`${styles.heroHeadText}`}>
-                Hi,&nbsp;I'm <span className='text-[#915eff]'>Hariom</span>
+                Hi, I&apos;m <span className='text-[#915eff]'>Hariom</span>
               </h1>
               <div className={`${styles.heroSubText} mt-2 text-white-100`}>
                 I am a <br className='sm:block hidden ' />
@@ -48,13 +49,49 @@ const Hero = () => {
               </div>
             </div>
           </div>
-          <div className="xs:bottom-20 w-full flex justify-center justify-center items-center flex flex-col">
-            <div className='py-5 px-12 min-h-[280px] flex flex-row sm:flex-col justify-evenly items-center '>
-              <img src={portfolio.image} alt={portfolio.name} className='sm:w-40 w-24 mx-5 rounded-full object-cover' />
-              <h2 className={`${styles.sectionHeadText}items-center justify-center`}>{portfolio.name}</h2>
+
+          <div className="xs:bottom-20 w-full flex justify-start lg:pb-1 pb-16 lg:pt-16 pt-8 items-center flex-col">
+            <div className="mb-6 flex justify-center">
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-full blur-lg opacity-30 animate-pulse">
+                </div>
+                <img src={portfolio.image} alt="Hariom Shivhare" className="relative rounded-full w-36 h-36 object-cover border-4 border-white shadow-xl hover:scale-105 transition-transform duration-300" />
+              </div>
             </div>
-              <p className={`${styles.sectionSubText} sm:block hidden items-center justify-center mb-10`}>{portfolio.description}</p>
+
+            <div className="flex justify-center gap-4 mb-6">
+              <div className="flex items-center gap-2 text-sm text-gray-600"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-code2 h-5 w-5 text-indigo-500"><path d="m18 16 4-4-4-4"></path><path d="m6 8-4 4 4 4"></path><path d="m14.5 4-5 16"></path></svg>
+                <span>Mern Stack | </span>
+              </div>
+
+              <div className="flex items-center gap-2 text-sm text-gray-600">
+                <span className="text-green-700"><LuBrainCircuit /></span>
+                <span>Data Structures | </span>
+              </div>
+
+              <div className="flex items-center gap-2 text-sm text-gray-600">
+                <span className="text-blue-700 text-[20px]"> <TbBrandCpp /></span>
+              </div>
+            </div>
+
+            <p className="text-lg md:text-xl text-white mb-6 text-center animate-fade-in-delay">
+              Mern Stack Developer | Data Structures | C++
+            </p>
+
+            <div className="flex justify-center gap-4">
+              <a href="#projects" className="px-6 py-3 bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform text-center hover:-translate-y-1">Scroll Projects
+              </a>
+              <a href="#contact" className="px-6 py-3 bg-white text-gray-800 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform text-center hover:-translate-y-1 border border-gray-100">Contact Me</a>
+            </div>
+            <div className="absolute lg:bottom-[15rem] bottom-[5rem] left-1/2 cursor-pointer">
+              <a href="#skills" >
+                <div className="transform -translate-x-1/2 animate-bounce">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-chevron-down h-6 w-6 text-gray-400"><path d="m6 9 6 6 6-6"></path></svg>
+                </div>
+              </a>
+            </div>
           </div>
+
         </div>
 
         {/* Computer canvas */}

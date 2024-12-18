@@ -1,35 +1,34 @@
-import React from 'react'
-import Tilt from 'react-parallax-tilt';
+// import Tilt from 'react-parallax-tilt';
 import { motion } from 'framer-motion';
-
+import PropTypes from 'prop-types';
 import { styles } from '../styles';
 import { github } from '../assets';
-import { SectionWrapper } from '../higherOrderComponent/index';
 import { projects } from '../constants';
 import { fadeIn, textVariant } from '../utils/motion';
 
-const ProjectCard = (props) => {
+
+const ProjectCard = ({ item, index }) => {
   // console.log(props.item.name);
   return (
     <>
       <motion.div
-        variants={fadeIn("up", "spring", 0.5 * props.index, 0.75)}
+        variants={fadeIn("up", "spring", 0.5 * index, 0.75)}
       >
-        <Tilt
-          className='bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full'
-          options={{
+        <div
+          className='bg-tertiary lg:min-h-[500px] p-5 rounded-2xl sm:w-[360px] w-full'
+          data-options={{
             max: 45,
             scale: 1,
             speed: 450
           }}
         >
-          <div className="relative w-full h-[230px]">
-            <img src={props.item.image} alt={props.item.name} className='w-full h-full object-cover rounded-2xl' />
+          <div className="relative w-full xs:h-[230px]">
+            <img src={item.image} alt={item.name} className='w-full h-full object-cover rounded-2xl' />
 
             <div className="absolute inset-0 flex justify-end m-2 card-img-hover">
               <div
                 onClick={() => {
-                  window.open(props.item.source_code_link, "_blank")
+                  window.open(item.source_code_link, "_blank")
                 }}
                 className='black-gradient w-10 h-10 rounded-full justify-center flex items-center cursor-pointer'
               >
@@ -39,23 +38,37 @@ const ProjectCard = (props) => {
           </div>
 
           <div className="mt-5">
-            <h3 className='text-white font-bold text-[24px]'>{props.item.name}</h3>
-            <p className='text-secondary text-[14px]'>{props.item.description}</p>
+            <h3 className='text-white font-bold text-[24px]'>{item.name}</h3>
+            <p className='text-secondary text-justify text-[14px]'>{item.description}</p>
           </div>
 
-          <div className="mt-4 flex flex-wrap gap-2">
+          <div className="mt-4 flex flex-wrap gap-2 justify-start">
             {
-              props.item.tags.map((items, index) => {
+              item.tags.map((items, index) => {
                 return (<p key={index} className={`text-[14px] ${items.color}`}>#{items.name}</p>)
               })
             }
           </div>
-        </Tilt>
+        </div>
       </motion.div>
     </>
   );
 }
-const Works = () => {
+
+// Define PropTypes for validation
+ProjectCard.propTypes = {
+  item: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    tags: PropTypes.array.isRequired,
+    image: PropTypes.string.isRequired,
+    source_code_link: PropTypes.string.isRequired,
+  }).isRequired,
+  index: PropTypes.number.isRequired,
+};
+
+
+const Projects = () => {
   return (
     <>
       <motion.div
@@ -68,15 +81,14 @@ const Works = () => {
       <div className="w-full flex">
         <motion.p
           variants={fadeIn("", "", 0.1, 1)}
-          className='mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]'
+          className='mt-3 text-secondary text-justify text-[17px] max-w-3xl leading-[30px]'
         >
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae natus id ut dolores unde facere nostrum tenetur ab reiciendis quis eius mollitia a maxime, ratione, praesentium reprehenderit obcaecati!
-          Aliquid possimus dignissimos sunt praesentium, odit dolor cum quos quis ipsa nemo maiores error doloremque.
+         Explore a diverse range of projects showcasing expertise in programming, development, and innovative problem-solving.
         </motion.p>
 
       </div>
 
-      <div className="mt-20 flex flex-wrap gap-7">
+      <div className="mt-20 flex flex-wrap gap-7 justify-center">
         {
           projects.map((items, index) => {
             // ...projects represents the whole array of objects (element at each index is split and passed to the component below)
@@ -89,4 +101,4 @@ const Works = () => {
 }
 
 // not a button on navbar to get targeted
-export default SectionWrapper(Works, "");
+export default Projects;

@@ -1,5 +1,6 @@
 // import logo from "./logo.svg";
 import profile from "./profile.jpeg";
+import DisplayPhoto from "./DP.jpeg";
 import logo from "./logo-black.png";
 import backend from "./backend.png";
 import creator from "./creator.png";
@@ -31,12 +32,21 @@ import linkedin from "./Social/linkedin.jpg"
 import gmail from "./Social/gmail.jpg"
 import whatsapp from "./Social/whatsapp.jpg"
 
-import carrent from "./carrent.png";
-import jobit from "./jobit.png";
-import tripguide from "./tripguide.png";
+// import carrent from "./carrent.png";
+// import jobit from "./jobit.png";
+// import tripguide from "./tripguide.png";
+import hackitClub from "./hackitClub.png";
+
+import hackit from "./projects/hackit.png";
+import amazonApi from "./projects/amazon_api.png";
+import cloudIde from "./projects/cloudIde.png";
+import cloudinaryApi from "./projects/cloudinary.png";
+import djangoApp from "./projects/django_app.png";
+import smsPython from "./projects/sms_python.png";
 
 export {
   profile,
+  DisplayPhoto,
   logo,
   backend,
   creator,
@@ -60,11 +70,18 @@ export {
   java,
   tnp,
   dsa,
-  carrent,
-  jobit,
-  tripguide,
+  // carrent,
+  // jobit,
+  // tripguide,
+  hackit,
+  hackitClub,
+  amazonApi,
+  cloudinaryApi,
+  cloudIde,
+  djangoApp,
+  smsPython,
   mobilePhone,
   linkedin,
   gmail,
-  whatsapp
+  whatsapp,
 };
