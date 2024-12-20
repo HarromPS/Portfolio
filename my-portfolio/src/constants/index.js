@@ -183,7 +183,7 @@ const experiences = [
   },
   {
     title: "Website Executive",
-    company_name: "SGGSIE&T",
+    company_name: "T&P Cell, SGGSIE&T",
     icon: tnp,
     iconBg: "#383E56",
     date: "Aug 2023 - Aug 2024",
