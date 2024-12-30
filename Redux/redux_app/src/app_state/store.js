@@ -1,6 +1,6 @@
 // create a redux store
 
-import {applyMiddleware} from "redux";
+// import {applyMiddleware} from "redux";
 import { configureStore} from '@reduxjs/toolkit'
 import rootReducers from "./reducers/index";
 import {thunk} from "redux-thunk";

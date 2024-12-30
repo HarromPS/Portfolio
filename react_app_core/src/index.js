@@ -1,21 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+import './custom.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-import {Provider} from "react-redux";
-import store from "./Redux/redux_store/_1_store.js";
-// import { store } from './app_state/store';
-
-// console.log(store.getState().counterReducer.counter.value+1);
-
+// means all rendering of App.js is rendered to 'root' element using index.js
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Provider store={store}>
-      <App />
-    </Provider>
+    <App />
   </React.StrictMode>
 );
 
