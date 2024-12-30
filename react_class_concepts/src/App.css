@@ -1,0 +1,225 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#root {
+  position: relative;
+}
+
+#main {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* background-color: red; */
+
+}
+
+/* Custom CSS */
+#box1 {
+  color: black;
+  padding: 12px 12px;
+  background-color: aqua;
+  cursor: pointer;
+}
+
+#box2 {
+  color: black;
+  padding: 12px 12px;
+  background-color: blueviolet;
+  cursor: pointer;
+}
+
+.count {
+  background-color: antiquewhite;
+  padding: 12px 12px;
+  margin: 12px 12px;
+  cursor: pointer;
+}
+
+.btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.increase {
+  background-color: rgb(109, 249, 3);
+  padding: 12px 18px;
+  margin: 12px 12px;
+  cursor: pointer;
+  color: black;
+}
+
+.reset {
+  background-color: rgb(73, 73, 255);
+  padding: 12px 18px;
+  margin: 12px 12px;
+  cursor: pointer;
+  color: white;
+}
+
+.decrease {
+  background-color: rgb(243, 2, 2);
+  padding: 12px 18px;
+  margin: 12px 12px;
+  cursor: pointer;
+  color: white;
+}
+
+.white-btn {
+  color: white;
+  border: 1px solid white;
+}
+
+.white-btn:hover {
+  color: white;
+  outline: none;
+  border: none;
+  color: black;
+  background-color: white;
+}
+
+.big-text {
+  font-size: 40px;
+}
+
+.btn {
+  margin: 12px 15px;
+}
+
+.search-btn {
+  color: black;
+  background: aliceblue;
+}
+
+.form-check-input {
+  cursor: pointer;
+}
+
+.form-switch {
+  padding: 0 12px;
+}
+
+
+/* custom buttons */
+
+#color-palette {
+  width: 15vw;
+  /* border: 2px solid red; */
+  padding: 2px;
+  height: 15vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+#color-palette button {
+  margin: 2px;
+}
+
+.palette-btn-light {
+  width: 40vw;
+  height: 4vh;
+  border-radius: 30px;
+  outline:2px;
+  border: 2px solid rgb(255, 241, 241);
+  background-color: rgb(208, 208, 208);
+}
+.palette-btn-danger {
+  width: 40vw;
+  height: 4vh;
+  border-radius: 30px;
+  outline: none;
+  border: none;
+  background-color: red;
+}
+
+.palette-btn-warning {
+  width: 40vw;
+  height: 4vh;
+  border-radius: 30px;
+  border: none;
+  outline: none;
+  background-color: orange;
+}
+
+.palette-btn-success {
+  width: 40vw;
+  height: 4vh;
+  border-radius: 30px;
+  outline: none;
+  border: none;
+  background-color: greenyellow;
+}
+
+.palette-btn-primary {
+  width: 40vw;
+  height: 4vh;
+  border-radius: 30px;
+  outline: none;
+  border: none;
+  background-color: blue;
+}
+
+.palette-btn-info {
+  width: 40vw;
+  height: 4vh;
+  border-radius: 30px;
+  outline: none;
+  border: none;
+  background-color: lightblue;
+}
+
+.palette-btn-secondary {
+  width: 40vw;
+  height: 4vh;
+  border-radius: 30px;
+  outline: none;
+  border: none;
+  background-color: grey;
+}
+
+.palette-btn-dark {
+  width: 40vw;
+  height: 4vh;
+  border-radius: 30px;
+  outline: none;
+  border: none;
+  background-color: black;
+}
+
+/* @media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+} */
+/*
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+} */
+
+/* .App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} */

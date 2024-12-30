@@ -1,0 +1,17 @@
+Most commonly used React LifeCycle methods
+-> series of events starts from Mounting to its Unmounting
+mount-> birth/entry of a component in the App
+update-> growth/update of a component in the App
+unmount-> termination/exit of a component in the App
+
+1.render() -> responsible for rendering HTML in react
+           -> for class based comp. : Mandatory
+           -> runs during Mounting & Updating of comp.
+           -> should be pure(cannot modify state during rendering)
+
+2.compontentDidMount() -> method runs after the render method
+                       -> Async/Await, fetch, State changes
+
+3.componentDidUpdate() -> method runs as soon as there is change in props/state
+
+4.componentWillUnmount() -> method runs just before a components unmount
