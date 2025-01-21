@@ -81,7 +81,7 @@ const Contact = () => {
       />
 
       {/* extra large margin top 12 */}
-      <div className='xl:mt-12 xl:flex-row flex-col-reverse flex gap-10 overflow-hidden'>
+      <div className='flex flex-col-reverse gap-10 overflow-hidden xl:mt-12 xl:flex-row'>
         {/* motion  */}
         <motion.div
           variants={slideIn('left', 'tween', 0.2, 1)}
@@ -94,34 +94,34 @@ const Contact = () => {
           {/* form */}
           <form
             ref={formRef}
-            className='mt-12 flex flex-col gap-8'
+            className='flex flex-col gap-8 mt-12'
           >
             <label htmlFor="" className="flex flex-col">
-              <span className="text-white font-medium mb-4 font-bold">Your Name</span>
+              <span className="mb-4 font-medium font-bold text-white">Your Name</span>
               <input
                 type="text"
                 name="name"
                 value={form.name}
                 onChange={handleChange}
                 placeholder="What's Your Name?"
-                className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outlined-none border-none font-medium'
+                className='px-6 py-4 font-medium text-white border-none rounded-lg bg-tertiary placeholder:text-gray-400 outlined-none'
               />
             </label>
 
             <label htmlFor="" className="flex flex-col">
-              <span className="text-white font-medium mb-4 font-bold">Your Email</span>
+              <span className="mb-4 font-medium font-bold text-white">Your Email</span>
               <input
                 type="text"
                 name="email"
                 value={form.email}
                 onChange={handleChange}
                 placeholder="What's Your Email?"
-                className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outlined-none border-none font-medium'
+                className='px-6 py-4 font-medium text-white border-none rounded-lg bg-tertiary placeholder:text-gray-400 outlined-none'
               />
             </label>
 
             <label htmlFor="" className="flex flex-col">
-              <span className="text-white font-medium mb-4 font-bold">Your Message</span>
+              <span className="mb-4 font-medium font-bold text-white">Your Message</span>
               <textarea
                 type="text"
                 name="message"
@@ -129,7 +129,7 @@ const Contact = () => {
                 value={form.message}
                 onChange={handleChange}
                 placeholder="What's Your Message?"
-                className='bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outlined-none border-none font-medium'
+                className='px-6 py-4 font-medium text-white border-none rounded-lg bg-tertiary placeholder:text-gray-400 outlined-none'
               />
             </label>
 
@@ -137,7 +137,7 @@ const Contact = () => {
               type='submit'
               onClick={handleSubmit}
               // padding on x (left right) padding y (top bottom)
-              className='bg-tertiary py-3 px-8 outline-none w-fit text-white font-bold shadow-md shadow-primary rounded-xl font-bold'
+              className='px-8 py-3 font-bold text-white border-2 border-white shadow-md outline-none bg-tertiary w-fit rounded-xl'
             >
               {loading ? "Sending...":"Send"}
             </button>

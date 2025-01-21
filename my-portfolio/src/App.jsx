@@ -14,7 +14,7 @@ function App() {
     <>
       <BrowserRouter>
         <div className="relative z-0 bg-primary">
-          <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center ">
+          <div className="bg-center bg-no-repeat bg-cover ">
             <Navbar />
             <Hero />
           </div>
@@ -26,7 +26,7 @@ function App() {
             <SocialMediaSectionWrapper />
             <ContactsSectionWrapper />
           </div>
-          <div className="footer bg-primary h-[50px] align-middle text-center">
+          <div className="footer bg-black h-[50px] align-middle text-center">
             © 2024 Hariom Shivhare | Lets connect & grow
           </div>
 

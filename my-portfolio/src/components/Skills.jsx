@@ -1,9 +1,9 @@
 import Tilt from 'react-parallax-tilt';
 import { motion } from "framer-motion";
-import { styles } from "../styles";
 import { services } from '../constants';
 import { fadeIn } from '../utils/motion';
 import PropTypes from 'prop-types';
+// import { styles } from "../styles";
 
 const ServiceCard = ({ index, service }) => {
   return (
@@ -11,7 +11,8 @@ const ServiceCard = ({ index, service }) => {
       <Tilt className='xs:w-[350px] w-full '>
         <motion.div
           variants={fadeIn("right", "spring", 0.5 * index, 0.75)}
-          className='w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card'
+          // className='w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card'
+          className='w-full green-pink-gradient p-[1px] rounded-[20px] '
         >
           {/* <p>{title}</p> */}
           <div data-options={JSON.stringify({
@@ -28,7 +29,7 @@ const ServiceCard = ({ index, service }) => {
                 service.tags.map((item, index) => {
                   return (
                     <>
-                      <p key={index} className='m-2 p-2 border-2 rounded-lg text-center text-white' >{item}</p>
+                      <p key={index} className='p-2 m-2 text-center text-white border-2 rounded-lg' >{item}</p>
                     </>
                   )
                 })
@@ -55,8 +56,8 @@ const Skills = () => {
   return (
     <>
       <motion.div >
-        <p className={`${styles.sectionSubText} py-4 `}>Introduction</p>
-        <h2 className={styles.sectionHeadText}>Overview.</h2>
+        <p className={`text-black font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px] py-4 `}>Introduction</p>
+        <h2 className={`sm:text-[18px] text-[14px] text-black uppercase tracking-wider`}>Overview.</h2>
       </motion.div>
 
       <motion.p variants={
@@ -67,7 +68,7 @@ const Skills = () => {
         My name is Hariom P. Shivhare. I am from Karanja (Lad), India. I am a B.Tech undergraduate specializing in Information Technology at SGGSIE&T, Nanded. I have a strong career interest in Programming, Development, Data structures & Algorithms, movies, and games.
       </motion.p>
 
-      <div className="flex justify-center flex-wrap gap-10 mt-20">
+      <div className="flex flex-wrap justify-center gap-10 mt-20">
         {
           services.map((service, index) => {
             return (

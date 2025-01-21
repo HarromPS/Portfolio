@@ -4,19 +4,20 @@
 // import {Home} from "./MyAppComponents/Home";
 // import {Footer} from "./MyAppComponents/Footer";
 import './App.css';
-import SortArray from "./bubbleSort/SortArray";
-import { Provider } from 'react-redux';
-import store from "./bubbleSort/redux/reduxStore/store.js";
+// import SortArray from "./bubbleSort/SortArray";
+// import { Provider } from 'react-redux';
+// import store from "./bubbleSort/redux/reduxStore/store.js";
+
+// import MemoComponent from "./MemoComponent/MemoComponent";
+
+// import MemoFunction from './MemoFunction/MemoFunction';
+
+import ReactApp from "./ReactCore/ReactApp";
 
 function App() {
 
   return (
     <>
-
-      <div className='absolute bottom-0 left-1/2'>
-        learn react
-      </div>
-
       {/* 1st app  */}
       {/* <BrowserRouter>
       <AppNavbar/>
@@ -37,11 +38,22 @@ function App() {
 
       {/* 3rd app */}
 
-      <div>
-        jedj
+      {/* <div className='App-header'>
+        <MemoComponent/>
+      </div> */}
+
+      {/* 4th app */}
+      {/* <div className='App-header'>
+        <p className='mb-4'> learn react</p>
+        <MemoFunction/>
+      </div> */}
+
+      <div className='App-header'>
+        <p className='mb-4'> learn react</p>
+        <ReactApp/>
       </div>
     </>
-  )
+  );
 }
 
 export default App;

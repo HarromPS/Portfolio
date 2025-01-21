@@ -10,10 +10,10 @@ const SocialIcons = ({ item, index }) => {
         <>
             <motion.div
                 variants={fadeIn("up", 'spring', 0.5 * index * 0.75)}
-                className='bg-black-200 p-2 '
+                className='p-2 bg-black-200 '
             >
 
-                <a href={(item.type === 'mail' ? `mailto:${item.link}` : (item.type === 'number' ? `tel:${item.link}` : item.link))} rel="noopener noreferrer" target='_blank' className='object-cover cursor-pointer text-center'>
+                <a href={(item.type === 'mail' ? `mailto:${item.link}` : (item.type === 'number' ? `tel:${item.link}` : item.link))} rel="noopener noreferrer" target='_blank' className='object-cover text-center cursor-pointer'>
                     <item.icon className='h-[30px] w-[30px]'/>
                 </a>
             </motion.div>
