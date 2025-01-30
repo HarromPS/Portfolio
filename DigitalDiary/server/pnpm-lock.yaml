@@ -24,7 +24,7 @@ importers:
         specifier: ^9.0.2
         version: 9.0.2
       mongoose:
-        specifier: ^8.9.2
+        specifier: ^8.9.5
         version: 8.9.5
       nodemon:
         specifier: ^3.1.9

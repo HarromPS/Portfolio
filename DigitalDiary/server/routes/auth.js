@@ -3,11 +3,17 @@ import express from 'express';
 import User from '../models/User.js';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
+
+// change 
+////////////////////////////////////////////
 import dotenv from "dotenv";
 dotenv.config();
 
-const router = express.Router();
 const jwtSecret = process.env.JWT_SECRET; 
+///////////////////////////////////////////
+
+
+const router = express.Router();
 
 router.post('/register', async (req, res) => {
     try {

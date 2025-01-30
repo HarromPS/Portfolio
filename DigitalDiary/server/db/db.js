@@ -1,11 +1,17 @@
 import mongoose from "mongoose";
+
+// change 
+////////////////////////////////////////////
 import dotenv from "dotenv";
 dotenv.config();
 
+const mongoURi = process.env.MONGODB_URI
+///////////////////////////////////////////
+
 const connectToMongoDB = async () => {
   try {
-    // await mongoose.connect("mongodb://localhost:27017/e_dairy");
-    await mongoose.connect(process.env.MONGODB_URI);
+    await mongoose.connect(mongoURi);     // change
+    
     console.log("Connected to MongoDB");
   } catch (error) {
     console.error("Error connecting to MongoDB:", error.message);

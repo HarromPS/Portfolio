@@ -1,8 +1,14 @@
 // middleware.js
-import dotenv from "dotenv";
-
 import jwt from "jsonwebtoken";
-const jwtSecret = process.env.JWT_SECRET;  
+
+// change 
+////////////////////////////////////////////
+import dotenv from "dotenv";
+dotenv.config();
+
+const jwtSecret = process.env.JWT_SECRET; 
+///////////////////////////////////////////
+
 
 export const verifyToken = (req, res, next) => {
   const authHeader = req.headers.authorization;
